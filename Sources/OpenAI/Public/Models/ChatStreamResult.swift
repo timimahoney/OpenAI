@@ -13,12 +13,11 @@ public struct ChatStreamResult: Codable, Equatable {
         public typealias FinishReason = ChatResult.Choice.FinishReason
 
         public struct ChoiceDelta: Codable, Equatable {
-            public typealias Role = ChatQuery.ChatCompletionMessageParam.Role
 
             /// The contents of the chunk message.
             public let content: String?
             /// The role of the author of this message.
-            public let role: Self.Role?
+            public let role: Role?
             public let toolCalls: [Self.ChoiceDeltaToolCall]?
 
             public struct ChoiceDeltaToolCall: Codable, Equatable {
